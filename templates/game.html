@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="m-4 g-4">
+    <h1>{{ game.name }}</h1>
+    <h2>${{ game.price | default:"10.00"}}</h2>
+    <h2>${{ game.value.value | default:"0.00" }}</h2>
+
+    <form>
+    </form>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% load static %}
+
+<!-- Footer -->
+<footer class="mt-4">
+    <div class="container py-4">
+        <div class="row">
+            <!-- Company Information -->
+            <div class="col-md-6 mb-3">
+                <h5>About Perfect Price</h5>
+                <p>Perfect Price helps Gamers finds their next best option to maximize their play time.</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="col-md-6 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home' %}" class="text-white">Home</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}" class="text-white">Log Out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}" class="text-white">Log In</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <p>&copy; 2024 Perfect Price. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- FontAwesome for Social Media Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>

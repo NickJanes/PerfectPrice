@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{% endblock %}
+
+{% block title %}
+Log In
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <h2>Log In</h2>
+  {{ form.as_div }}
+  <input type="submit"></input>
+</form>
+{% endblock %}

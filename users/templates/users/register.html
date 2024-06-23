@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{% endblock %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<!-- templates/registration/login.html -->
+<form method="post">
+  {% csrf_token %}
+  <h2>Register</h2>
+  <div class="form-group">
+    {{ form.as_p }}
+  </div>
+  <input type="submit"/>
+</form>
+{% endblock %}

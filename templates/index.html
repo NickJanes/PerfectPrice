@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="landing">
+        <h1>Stop overpaying for your games.<br><br>Pay the <span>Perfect Price</span></h1>
+    </div>
+
+    <div class="row g-4">
+    {% for game in games %}
+        <div class="col-sm-4 p-3">
+            <div class="card card-game">
+                <div class="card-body">
+                    <a href="{% url 'game' game.id %}"><h5 class="card-title">{{ game.name | truncatechars:18}}</h5></a>
+                    <div class="data row">
+                        <div class="col data-item value">{{ game.price }}</div>
+                        <div class="col data-item price">{{  game.value.value | default:"$0.00" }}</div>
+                        <div class="col data-item ratio">{{  game.value.value | default:"$0.00" }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    {% comment %} <table class="game-table">
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Price</th>
+            <th>V/P</th>
+        </tr>
+    {% for game in games %}
+        <tr>
+            <td>{{ game.name }}</td>
+            <td>{{ game.price }}</td>
+            <td>{{ game.value.value | default:"$0.00"}}</td>
+        </tr>
+    {% endfor %}
+    </table> {% endcomment %}
+
+
+{% endblock content%}
+    
